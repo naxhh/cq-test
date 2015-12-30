@@ -2,6 +2,7 @@ package testdb
 
 import (
 	"database/sql/driver"
+	cq "gopkg.in/cq.v1/types"
 )
 
 type stmt struct {
@@ -24,4 +25,8 @@ func (s *stmt) Exec(args []driver.Value) (driver.Result, error) {
 
 func (s *stmt) Query(args []driver.Value) (driver.Rows, error) {
 	return s.queryFunc(args)
+}
+
+func (s *stmt) ColumnConverter(idx int) driver.ValueConverter {
+	return cq.CypherValue{}
 }
