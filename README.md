@@ -6,6 +6,9 @@ As an example the default sql driver does not allow slices while `go-cq/cq` does
 
 **This project is WIP right now and not all the features have been tested to ensure they work as they should. Right now only Statements have been tested**
 
+## Requirements
+As right now this project only requires `gopkg.in/cq.v1/types` for type conversions.
+
 #### License
 Copyright (c) 2013, Erik St. Martin
 All rights reserved.
